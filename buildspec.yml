@@ -1,0 +1,18 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: latest
+  pre_build:
+    commands:
+      - echo Installing source NPM dependencies...
+  build:
+    commands:
+      - echo Installing source NPM dependencies...
+      - npm install -g yarn
+      - yarn
+    post_builds:
+      commands:
+        - echo Build completed on `date`
+artifacts:
+  type: zip
