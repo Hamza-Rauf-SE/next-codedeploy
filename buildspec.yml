@@ -12,6 +12,7 @@ phases:
       - npm install -g yarn
       - yarn
     post_builds:
+      on-failure: ABORT
       commands:
         - echo Build completed on `date`
 artifacts:
