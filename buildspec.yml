@@ -7,14 +7,14 @@ phases:
     commands:
       - echo Installing source NPM dependencies...
   build:
+    on-failure: ABORT
     commands:
       - echo Installing source NPM dependencies...
       - npm install -g yarn
       - yarn
+      - yarn build
     post_builds:
-      on-failure: ABORT
       commands:
-        - yarn build
         - echo Build completed on `date`
 artifacts:
   type: zip
