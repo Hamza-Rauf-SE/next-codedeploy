@@ -14,6 +14,7 @@ phases:
     post_builds:
       on-failure: ABORT
       commands:
+        - yarn build
         - echo Build completed on `date`
 artifacts:
   type: zip
